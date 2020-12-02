@@ -1,4 +1,4 @@
-# Command Line Help Tool Api
+# Command Line Help Tool Rest Api
 
 This api is built to ease beginners' transition to the unix terminal. It is built with all get-requests (except for the /dev branch) for ease of access in the termal (via curl/wget).
 
