@@ -1,5 +1,19 @@
 # Command Line Help Tool Api
 
+This api is built to ease beginners' transition to the unix terminal. It is built with all get-requests (except for the /dev branch) for ease of access in the termal (via curl/wget).
+
+- USAGE: curl http://url
+- OUTPUT: _displays all accessible paths with their functions_
+    """
+    'NAVIGATION PATHS:': {
+        '.../all': 'display all hints',
+        '.../search/<query>': 'search for hint or tag',
+        '.../search-tag/<query>': 'search for tag',
+        '.../search-hint/<query>': 'search for hint',
+        '.../dev': 'modify the database',
+    }
+    """
+
 Currently only supports Unix (Mac & Linux)
 
 ## Endpoints
