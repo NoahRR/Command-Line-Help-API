@@ -15,4 +15,5 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from app import views
+from app import dev_views
 from app import models
