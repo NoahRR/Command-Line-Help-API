@@ -1,6 +1,6 @@
-# Command Line Help Tool Rest Api
+# Command Line Help Tool REST API
 
-This api is built to ease beginners' transition to the unix terminal. It is built with all get-requests (except for the /dev branch) for ease of access in the termal (via curl/wget).
+This API is built to ease beginners' transition to the unix terminal. It is built with all get-requests (except for the /dev branch) for ease of access in the termal (via curl/wget).
 
 - USAGE: When you find yourself not remembering a terminal command, or simply completely lost, just type:
 ```
