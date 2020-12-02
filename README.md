@@ -23,12 +23,15 @@ GET req:
 ### .../dev
 GET req:
 - displays all hints with all information
+
 POST req:
 - takes 'name', 'description', and optional 'tags' (in csv format) parameters
 - creates a new hint
+
 PUT req:
 - takes 'id', optional 'name', optional 'description', and optional 'tags' (in csv format) parameters
 - updates an existing hint
+
 DELETE req:
 - takes 'id' parameter
 - deletes an existing hint
