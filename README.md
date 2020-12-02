@@ -39,3 +39,6 @@ PUT req:
 DELETE req:
 - takes 'id' parameter
 - deletes an existing hint
+
+## Notes
+- I am aware this is not the typical use case for APIs, however, I value creating something actually useful with my projects, regardless of size, and this was an idea that fit exactly that!
