@@ -4,20 +4,31 @@ Currently only supports Unix (Mac & Linux)
 
 ## Endpoints
 
-### .../start 
-- provides basic guidelines to using this api
+### .../
+GET req:
+- displays all navigation paths/endpoints
 
-### .../beginner
-### .../all
-### .../navigation
-### .../file-commands
-### .../viewing
-### .../system-information
-### .../process-management
-### .../file-permissions
-### .../ssh
-### .../searching
-### .../compression
-### .../network
-### .../installation
-### .../shortcuts
+### .../search/<query>
+GET req:
+- takes string <query> input and displays hints with maching names or tags
+
+### .../search-tag/<query>
+GET req:
+- takes string <query> input and displays hints with matching tag
+
+### .../search-hint/<query>
+GET req:
+- takes string <query> input and displays hints with matching name
+
+### .../dev
+GET req:
+- displays all hints with all information
+POST req:
+- takes 'name', 'description', and optional 'tags' (in csv format) parameters
+- creates a new hint
+PUT req:
+- takes 'id', optional 'name', optional 'description', and optional 'tags' (in csv format) parameters
+- updates an existing hint
+DELETE req:
+- takes 'id' parameter
+- deletes an existing hint
