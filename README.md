@@ -5,7 +5,7 @@ This api is built to ease beginners' transition to the unix terminal. It is buil
 - USAGE: curl http://url
 - OUTPUT: _displays all accessible paths with their functions_
 
-"""
+'''
     'NAVIGATION PATHS:': {
         '.../all': 'display all hints',
         '.../search/<query>': 'search for hint or tag',
@@ -13,7 +13,7 @@ This api is built to ease beginners' transition to the unix terminal. It is buil
         '.../search-hint/<query>': 'search for hint',
         '.../dev': 'modify the database',
     }
-"""
+'''
 
 Currently only supports Unix (Mac & Linux)
 
