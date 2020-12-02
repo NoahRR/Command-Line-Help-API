@@ -8,6 +8,10 @@ Currently only supports Unix (Mac & Linux)
 GET req:
 - displays all navigation paths/endpoints
 
+### .../all
+GET req:
+- displays all hints with all information
+
 ### .../search/<query>
 GET req:
 - takes string <query> input and displays hints with maching names or tags
