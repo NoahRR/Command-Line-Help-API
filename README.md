@@ -67,14 +67,6 @@ GET req:
 GET req:
 - takes string <query> input and displays hints with maching names or tags
 
-### .../search-tag/<query>
-GET req:
-- takes string <query> input and displays hints with matching tag
-
-### .../search-hint/<query>
-GET req:
-- takes string <query> input and displays hints with matching name
-
 ### .../dev
 GET req:
 - displays all hints with all information
