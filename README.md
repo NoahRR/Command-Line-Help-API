@@ -1,18 +1,22 @@
-# Command Line Help Tool Api
+# Command Line Help Tool REST API
 
-This api is built to ease beginners' transition to the unix terminal. It is built with all get-requests (except for the /dev branch) for ease of access in the termal (via curl/wget).
+This API is built to ease beginners' transition to the unix terminal. It is built with all get-requests (except for the /dev branch) for ease of access in the termal (via curl/wget).
 
-- USAGE: curl http://url
-- OUTPUT: _displays all accessible paths with their functions_
-    """
-    'NAVIGATION PATHS:': {
-        '.../all': 'display all hints',
-        '.../search/<query>': 'search for hint or tag',
-        '.../search-tag/<query>': 'search for tag',
-        '.../search-hint/<query>': 'search for hint',
-        '.../dev': 'modify the database',
+- USAGE: When you find yourself not remembering a terminal command, or simply completely lost, just type:
+```
+curl http://http://127.0.0.1:8001
+```
+The output will show you how to use the api. For example, if you forget the command to change directory, simply search for it like so: curl http://127.0.0.1:8001/search/changedirectory. That output would look something like this:
+```
+{
+    "5": {
+        "name": "cd",
+        "description": "Change directory. Directory = Folder. This is how you navigate through your files in the terminal.",
+        "tags": "changedir, changedirectory, changelocation, movelocation"
     }
-    """
+}
+```
+Note: queries should not contain spaces. To search for "more help", use "curl http://http://127.0.0.1:8001/search/morehelp"
 
 Currently only supports Unix (Mac & Linux)
 
