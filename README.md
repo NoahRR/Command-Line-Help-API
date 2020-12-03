@@ -2,9 +2,11 @@
 
 This API is built to ease beginners' transition to the unix terminal. It is built with all get-requests (except for the /dev branch) for ease of access in the termal (via curl/wget).
 
+This project is not live, but if it were, just replace http://127.0.0.1:8001 with the hosted url!
+
 - USAGE: When you find yourself not remembering a terminal command, or simply completely lost, just type:
 ```
-curl http://http://127.0.0.1:8001
+curl http://127.0.0.1:8001
 ```
 The output will show you how to use the api. For example, if you forget the command to change directory, simply search for it like so: curl http://127.0.0.1:8001/search/changedirectory. That output would look something like this:
 ```
