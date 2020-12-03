@@ -8,7 +8,16 @@ This project is not live, but if it were, just replace http://127.0.0.1:8001 wit
 ```
 curl http://127.0.0.1:8001
 ```
-The output will show you how to use the api.
+The output will show you how to use the api:
+```json
+{
+    "NAVIGATION PATHS:": {
+        ".../all": "display all hints",
+        ".../search/<query>": "search for what you need to know",
+        ".../dev": "modify the database"
+    }
+}
+```
 
 For example, if you want to know how to work with folders, simply search for it like so: curl http://127.0.0.1:8001/search/folder. That output would look something like this:
 ```json
