@@ -16,6 +16,7 @@ The output will show you how to use the api. For example, if you forget the comm
     }
 }
 ```
+Note: queries should not contain spaces. To search for "more help", use "curl http://http://127.0.0.1:8001/search/morehelp"
 
 Currently only supports Unix (Mac & Linux)
 
