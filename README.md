@@ -8,7 +8,9 @@ This project is not live, but if it were, just replace http://127.0.0.1:8001 wit
 ```
 curl http://127.0.0.1:8001
 ```
-The output will show you how to use the api. For example, if you forget the command to change directory, simply search for it like so: curl http://127.0.0.1:8001/search/changedirectory. That output would look something like this:
+The output will show you how to use the api.
+
+For example, if you forget the command to change directory, simply search for it like so: curl http://127.0.0.1:8001/search/changedirectory. That output would look something like this:
 ```
 {
     "5": {
