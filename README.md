@@ -11,7 +11,7 @@ curl http://127.0.0.1:8001
 The output will show you how to use the api.
 
 For example, if you want to know how to work with folders, simply search for it like so: curl http://127.0.0.1:8001/search/folder. That output would look something like this:
-```
+```json
 {
     "4": {
         "name": "cd <directory name>",
