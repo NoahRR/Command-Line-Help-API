@@ -40,9 +40,7 @@ class start_up(Resource):
         context = {
             'NAVIGATION PATHS:': {
                 '.../all': 'display all hints',
-                '.../search/<query>': 'search for hint or tag',
-                '.../search-tag/<query>': 'search for tag',
-                '.../search-hint/<query>': 'search for hint',
+                '.../search/<query>': 'search for what you need to know',
                 '.../dev': 'modify the database',
             }
         }
@@ -55,12 +53,14 @@ class search(Resource):
         display_hints = {}
 
         # search for hint names
-        hints = Hints.query.filter_by(name=query).all()
+        #  hints = Hints.query.filter_by(name=query).all()
+        hints = Hints.query.filter(Hints.name.ilike('%' + query + '%')).all()
         for hint in hints:
 
             # get related tags
             display_tags = ""
             tags = Tags.query.filter_by(parent_hint=hint.id).all()
+            #  tags = Tags.query.filter(Tags.parent_hint.ilike(hint.id))
             for i in range(len(tags)):
                 display_tags += str(tags[i]).split(' ')[1] + ', '
             display_tags = display_tags[:-2]
@@ -72,7 +72,8 @@ class search(Resource):
             }
 
         # search for tags
-        maching_tags = Tags.query.filter_by(name=query).all()
+        #  maching_tags = Tags.query.filter_by(name=query).all()
+        maching_tags = Tags.query.filter(Tags.name.ilike('%' + query + '%')).all()
         for tag in maching_tags:
 
             hint = Hints.query.filter_by(id=tag.parent_hint).first()
@@ -95,61 +96,6 @@ class search(Resource):
         else:
             return display_hints
 
-class search_hint(Resource):
-    def get(self, query):
-
-        display_hints = {}
-        hints = Hints.query.filter_by(name=query).all()
-
-        for hint in hints:
-
-            # get related tags
-            display_tags = ""
-            tags = Tags.query.filter_by(parent_hint=hint.id).all()
-            for i in range(len(tags)):
-                display_tags += str(tags[i]).split(' ')[1] + ', '
-            display_tags = display_tags[:-2]
-
-            display_hints[hint.id] = {
-                'name': hint.name,
-                'description': hint.description,
-                'tags': display_tags
-            }
-
-        if not display_hints:
-            return f"There were no hints under the name '{query}'"
-        else:
-            return display_hints
-
-class search_tag(Resource):
-    def get(self, query):
-
-        display_hints = {}
-        maching_tags = Tags.query.filter_by(name=query).all()
-        for tag in maching_tags:
-
-            hint = Hints.query.filter_by(id=tag.parent_hint).first()
-
-            # get related tags
-            display_tags = ""
-            tags = Tags.query.filter_by(parent_hint=hint.id).all()
-            for i in range(len(tags)):
-                display_tags += str(tags[i]).split(' ')[1] + ', '
-            display_tags = display_tags[:-2]
-
-            display_hints[hint.id] = {
-                'name': hint.name,
-                'description': hint.description,
-                'tags': display_tags
-            }
-
-        if not display_hints:
-            return f"There were no hints with the tag '{query}'"
-        else:
-            return display_hints
-
-
-
 
 """
 
@@ -160,6 +106,6 @@ class search_tag(Resource):
 api.add_resource(start_up, "/")
 api.add_resource(show_all, "/all")
 api.add_resource(search, "/search/<string:query>")
-api.add_resource(search_hint, "/search-hint/<string:query>")
-api.add_resource(search_tag, "/search-tag/<string:query>")
+#  api.add_resource(search_hint, "/search-hint/<string:query>")
+#  api.add_resource(search_tag, "/search-tag/<string:query>")
 
