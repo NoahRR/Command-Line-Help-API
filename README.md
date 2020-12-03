@@ -49,7 +49,7 @@ For example, if you want to know how to work with folders, simply search for it 
     },
 }
 ```
-Note: queries should not contain spaces. To search for "more help", use "curl http://http://127.0.0.1:8001/search/morehelp"
+Note: queries should not contain spaces. To search for "more help", use "curl http://http://127.0.0.1:8001/search/morehelp". For better results, input shorter keywords, or search for individual words. For example, searching for "more help" won't return anything, however, "more" and "help" individually searched will.
 
 Currently only supports Unix (Mac & Linux)
 
