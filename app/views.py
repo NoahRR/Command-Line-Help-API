@@ -37,15 +37,20 @@ class start_up(Resource):
 
     def get(self):
 
-        context = {
+        return {
             'NAVIGATION PATHS:': {
                 '.../all': 'display all hints',
                 '.../search/<query>': 'search for what you need to know',
                 '.../dev': 'modify the database',
             }
-        }
+        }, 200
 
-        return context, 200
+class query_needed(Resource):
+    def get(self):
+        return {
+            'Message': 'Must provide a query to search for!',
+            'Example': ".../search/cd to search for 'cd'"
+        }, 404
 
 class search(Resource):
     def get(self, query):
@@ -92,7 +97,9 @@ class search(Resource):
             }
 
         if not display_hints:
-            return f"There were no hints or tags under the name '{query}'", 200
+            return {
+                'Message': f"There were no matches for '{query}'"
+            }, 404
         else:
             return display_hints, 200
 
@@ -105,5 +112,6 @@ class search(Resource):
 
 api.add_resource(start_up, "/")
 api.add_resource(show_all, "/all")
+api.add_resource(query_needed, "/search")
 api.add_resource(search, "/search/<string:query>")
 

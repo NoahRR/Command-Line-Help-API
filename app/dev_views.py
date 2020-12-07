@@ -29,7 +29,7 @@ class db_config(Resource):
                 'description': hint.description,
                 'tags': display_tags
             }
-        return context
+        return context, 200
 
     # inserts new data
     def post(self):
@@ -84,7 +84,7 @@ class db_config(Resource):
                 'description': newHint_description,
             },
             'Added the following tags': tag_names,
-        }
+        }, 201
 
     # deletes data
     def delete(self):
@@ -121,7 +121,7 @@ class db_config(Resource):
                 'id': del_id,
                 'name': del_name
             }
-        }
+        }, 200
 
     # updates data
     def put(self):
@@ -182,7 +182,7 @@ class db_config(Resource):
                 'description': hint_update.description,
             },
             'Added the following tags': tag_names,
-        }
+        }, 200
 
 
 """
