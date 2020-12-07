@@ -31,7 +31,7 @@ class show_all(Resource):
             }
 
 
-        return context
+        return context, 200
 
 class start_up(Resource):
 
@@ -45,7 +45,7 @@ class start_up(Resource):
             }
         }
 
-        return context
+        return context, 200
 
 class search(Resource):
     def get(self, query):
@@ -92,9 +92,9 @@ class search(Resource):
             }
 
         if not display_hints:
-            return f"There were no hints or tags under the name '{query}'"
+            return f"There were no hints or tags under the name '{query}'", 200
         else:
-            return display_hints
+            return display_hints, 200
 
 
 """
@@ -106,6 +106,4 @@ class search(Resource):
 api.add_resource(start_up, "/")
 api.add_resource(show_all, "/all")
 api.add_resource(search, "/search/<string:query>")
-#  api.add_resource(search_hint, "/search-hint/<string:query>")
-#  api.add_resource(search_tag, "/search-tag/<string:query>")
 
