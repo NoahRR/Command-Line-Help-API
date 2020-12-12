@@ -1,6 +1,6 @@
 # Command Line Help Tool REST API
 
-This API is built to ease beginners' transition to the unix terminal. It is built with all get-requests (except for the /dev branch) for ease of access in the termal (via curl/wget).
+This API is built to ease beginners' transition to the unix terminal. This is not a "typical" use case for an API, but it works.
 
 This project is not live, but if it were, just replace http://127.0.0.1:8001 with the hosted url!
 
