@@ -1,4 +1,4 @@
-# Command Line Help Tool REST API
+# Command Line Help Tool - JSON REST API
 
 This API is built to ease beginners' transition to the unix terminal. This is not a "typical" use case for an API, but it functions just like one.
 
